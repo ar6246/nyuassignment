@@ -63,7 +63,7 @@ def webServer(port=13331):
       # Remember the format you used in the try: block!
       #Fill in start
       invalidrequest = b"HTTP1.1/404 Not Found\r\nContent-Type: text/html; charset=UTF-8\r\n"
-      connectionSocket.send(invalidrequest)
+      connectionSocket.sendall(invalidrequest)
 
       #Fill in end
 
