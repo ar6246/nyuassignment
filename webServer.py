@@ -1,4 +1,3 @@
-
 # import socket module
 from socket import *
 # In order to terminate the program
@@ -49,7 +48,7 @@ def webServer(port=13331):
       #Fill in start - append your html file contents #Fill in end 
 
         connectionSocket.send(i)
-        f.close()
+      f.close()
 
         
       #Send the content of the requested file to the client (don't forget the headers you created)!
@@ -58,7 +57,7 @@ def webServer(port=13331):
 
       # Fill in end
         
-        connectionSocket.close() #closing the connection socket
+      connectionSocket.close() #closing the connection socket
       
     except Exception as e:
       # Send response message for invalid request due to the file not being found (404)
