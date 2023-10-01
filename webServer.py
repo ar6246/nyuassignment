@@ -12,6 +12,7 @@ def webServer(port=13331):
   serverSocket.bind(("", port))
   
   #Fill in start
+  server_ = "127.0.0.1"
   serverSocket.listen(1)
   #Fill in end
 
@@ -39,7 +40,7 @@ def webServer(port=13331):
       validrequest = b"HTTP1.1/ 200 OK\r\n"
 
       connectionSocket.send(validrequest + outputdata)
-      #connectionSocket.send(outputdata)
+      connectionSocket.send(outputdata)
 
       #Note that a complete header must end with a blank line, creating the four-byte sequence "\r\n\r\n" Refer to https://w3.cs.jmu.edu/kirkpams/OpenCSF/Books/csf/html/TCPSockets.html
  
@@ -66,6 +67,8 @@ def webServer(port=13331):
       #Fill in start
       invalidrequest = b"HTTP1.1/ 404 Not Found\r\n"
       connectionSocket.send(invalidrequest)
+      bodyrequest= b"<html><head></head><body><h1>404 Not Found</h1></body></html>\r\n"
+      connectionSocket.send(bodyrequest)
 
       #Fill in end
 
