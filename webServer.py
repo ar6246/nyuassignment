@@ -36,7 +36,7 @@ def webServer(port=13331):
               
       #Content-Type is an example on how to send a header as bytes. There are more!
       outputdata = b"Content-Type: text/html; charset=UTF-8\r\n"
-      validrequest = b"HTTP1.1/ 200 OK\r\n\r\n"
+      validrequest = b"HTTP1.1/ 200 OK\r\n"
 
       connectionSocket.send(validrequest + outputdata)
       #connectionSocket.send(outputdata)
